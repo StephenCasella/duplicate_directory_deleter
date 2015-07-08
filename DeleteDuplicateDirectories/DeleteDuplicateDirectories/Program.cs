@@ -11,7 +11,7 @@ namespace DeleteDuplicateDirectories
 		public static void Main (string[] args)
 		{
 			if (args.Length != 2 || !new[] { "delete", "analyze" }.Contains (args [1].ToLower ()) || 
-				!Directory.Exists (args [1])) {
+				!Directory.Exists (args [0])) {
 				Console.Error.WriteLine ("Usage: DeleteDuplicateDirectories <root filepath> <delete|analyze>");
 			} 
 			else 
@@ -64,7 +64,7 @@ namespace DeleteDuplicateDirectories
 							                 directory => Directory.Delete (directory, true));
 						}
 
-						Console.WriteLine ("Finished.");
+						Console.WriteLine (Environment.NewLine + "Finished.");
 					}
 				}
 
